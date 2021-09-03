@@ -41,6 +41,7 @@ dependencies:
    &emsp; O modulo é dividido em dois grupos: ``login`` e ``cadastro``. Cada grupo segue o design pattern MVC, ou seja, é composto de uma camada view e de outra camada controller. Além desses dois grupos, o modulo contém a pasta referente a camada models, essa pasta irá conter models que são utilizados quando há a necessidade de uma maior personalização, por exemplo o model de um usuário que contém parametros além do model de usuário default. <br/>
    &emsp; Essa é a estrutura minima necessária, mas dependendo do projeto pode ser necessário utilizar dentro do grupo outros tipos de pastas genéricas, como por exemplo pasta widgets, components, etc. 
 
+<br/>
 
 ## 3. Setar configurações
 
@@ -58,3 +59,5 @@ Para configurar o processo de autenticação instancie a classe  ``AuthPreferenc
     publicRoute: AppRoutes.LOGIN,
   );
 ``` 
+
+<br/><br/>
