@@ -66,6 +66,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#dependencias" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -189,9 +194,44 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Configurações gerais
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Configurações gerais
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dependencias" class="md-nav__link">
+    Dependências
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arquitetura" class="md-nav__link">
+    Arquitetura
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -234,6 +274,43 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dependencias" class="md-nav__link">
+    Dependências
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arquitetura" class="md-nav__link">
+    Arquitetura
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
@@ -242,7 +319,31 @@
                 
                   <h1>Configurações gerais</h1>
                 
-                
+                <p>Nesse tópico serão abordadas as configurações gerais para implementar um modulo de autenticação via package Seg Auth. </p>
+<h2 id="dependencias">Dependências</h2>
+<p>&emsp;Clone os repositórios dos packages <code>seg_app</code> e <code>seg_auth</code>, através do github. </p>
+<p>&emsp;No arquivo <code>pubspec.yaml</code>, instale os packages, indicando o diretório onde os packages foram clonados. Por exemplo: </p>
+<div class="highlight"><pre><span></span><code><span class="nt">dependencies</span><span class="p">:</span>
+
+  <span class="nt">seg_app</span><span class="p">:</span> 
+    <span class="nt">path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">../../../seg_packages/projeto-seg_app/seg_app</span>
+
+  <span class="nt">seg_auth</span><span class="p">:</span> 
+    <span class="nt">path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">../../../seg_packages/projeto-seg_auth/seg_auth</span>
+</code></pre></div>
+<p><br/></p>
+<h2 id="arquitetura">Arquitetura</h2>
+<p>&emsp;Depois de instalar todas as dependencias, o próximo passo é organizar a arquitetura e estrutura de pastas do nosso modulo de autenticação. O modulo de autenticação é organizado seguindo o padrão geralmente utilizadas em outros modulos, baseado no design pattern MVC. A estrutura de pastas deve ficar da seguinte forma: </p>
+<div class="highlight"><pre><span></span><code>├── login/
+│   └── login.controller.dart
+│   └── login.view.dart
+├── cadastro/
+│   └── cadastro.controller.dart
+│   └── cadastro.view.dart
+├── models/
+</code></pre></div>
+<p>&emsp; O modulo é dividido em dois grupos: <code>login</code> e <code>cadastro</code>. Cada grupo segue o design pattern MVC, ou seja, é composto de uma camada view e de outra camada controller. Além desses dois grupos, o modulo contém a pasta referente a camada models, essa pasta irá conter models que são utilizados quando há a necessidade de uma maior personalização, por exemplo o model de um usuário que contém parametros além do model de usuário default. <br/>
+   &emsp; Essa é a estrutura minima necessária, mas dependendo do projeto pode ser necessário utilizar dentro do grupo outros tipos de pastas genéricas, como por exemplo pasta widgets, components, etc. </p>
                 
               
               
