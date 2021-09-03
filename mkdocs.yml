@@ -1,0 +1,69 @@
+site_name: Docs Seg Auth
+
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - attr_list
+  # - markdown.extensions.extra
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+extra_css:
+  - stylesheets/extra.css
+  
+nav:
+
+  - Configurações gerais: config_gerais.md
+  - Cadastro: cadastro.md
+  - Login: login.md
+  # - Aplicativos Mobile:
+  #   - Resumo:  apps_mobile/resumo.md
+  #   - Senior Safer:  apps_mobile/senior_safer.md
+  #   - Driver Safer:  apps_mobile/driver_safer.md
+  # - API Rest: api_rest/api_rest.md
+  # - Banco de dados: database/database.md
+  # - Packages:
+  #   - Introdução:  packages/introducao.md 
+  #   - SegApp:  packages/seg_app.md 
+  #   - SegAuth:  packages/introducao.md 
+  #   - SaferList:  packages/safer_list.md 
+  # - Hardware: 
+  #   - Devices: hardware/devices.md
+  # - Guias e Tutoriais:
+  #   - Processo de cadastro: guias_tutoriais/processo_cadastro.md    
+  # - Ferramentas e utilidades:
+  #   - Gerar QR Code de um device: ferramentas_utilidades/gerar_qr.md
+  #   - Log de eventos UDP: ferramentas_utilidades/gerar_qr2.md
+  #   - Navegador versão Administrador ( Acompanhar todos os monitoramentos ): ferramentas_utilidades/gerar_qr.md
+  #   - Servidor Web:  ferramentas_utilidades/servidor_web.md
+  #   - Ferramentas para Debug de Push:  ferramentas_utilidades/push.md 
+    
+
+theme:
+  name: null
+  custom_dir: mkdocs-material/material
+
+  palette:
+    primary: white
+
+  # features:
+  #   - navigation.expand
+
+  # 404 page
+  static_templates:
+    - 404.html
+
+  # Necessary for search to work properly
+  include_search_page: false
+  search_index_only: true
+
+  # Default values, taken from mkdocs_theme.yml
+  language: en
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: assets/favicon.png
+  icon:
+    logo: logo
