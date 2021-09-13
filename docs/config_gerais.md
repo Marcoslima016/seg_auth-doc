@@ -45,9 +45,9 @@ dependencies:
 
 ## 3. Setar configurações
 
-A grosso modo, podemos dizer que o processo de autenticação é igual para qualquer app. Mas existem pequenas variações no processo, por exemplo para qual página é redirecionado após realizar o login, etc. A configuração do processo de autenticação é feito no ``App Controller`` através da classe ``AuthPreferences()``. 
+A grosso modo, podemos dizer que o processo de autenticação é igual para qualquer app. Mas existem pequenas variações no processo, por exemplo para qual página é redirecionado após realizar o login, etc. A configuração do processo de autenticação é feito no ``App Controller`` através da classe [AuthPreferences()](https://marcoslima016.github.io/seg_auth-api/lib.imports/AuthPreferences-class.html) . 
 
-Para configurar o processo de autenticação instancie a classe  ``AuthPreferences()`` dentro do AppController, conforme demonstrado no exemplo a seguir: 
+Para configurar o processo de autenticação instancie a classe  [AuthPreferences()](https://marcoslima016.github.io/seg_auth-api/lib.imports/AuthPreferences-class.html) dentro do AppController, conforme demonstrado no exemplo a seguir: 
 
 
 ```dart

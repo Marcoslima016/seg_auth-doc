@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dependencias" class="md-skip">
+        <a href="#1-dependencias" class="md-skip">
           Skip to content
         </a>
       
@@ -216,15 +216,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dependencias" class="md-nav__link">
-    Dependências
+  <a href="#1-dependencias" class="md-nav__link">
+    1. Dependências
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#arquitetura" class="md-nav__link">
-    Arquitetura
+  <a href="#2-arquitetura" class="md-nav__link">
+    2. Arquitetura
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-setar-configuracoes" class="md-nav__link">
+    3. Setar configurações
   </a>
   
 </li>
@@ -291,15 +298,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dependencias" class="md-nav__link">
-    Dependências
+  <a href="#1-dependencias" class="md-nav__link">
+    1. Dependências
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#arquitetura" class="md-nav__link">
-    Arquitetura
+  <a href="#2-arquitetura" class="md-nav__link">
+    2. Arquitetura
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-setar-configuracoes" class="md-nav__link">
+    3. Setar configurações
   </a>
   
 </li>
@@ -320,7 +334,7 @@
                   <h1>Configurações gerais</h1>
                 
                 <p>Nesse tópico serão abordadas as configurações gerais para implementar um modulo de autenticação via package Seg Auth. </p>
-<h2 id="dependencias">Dependências</h2>
+<h2 id="1-dependencias">1. Dependências</h2>
 <p>&emsp;Clone os repositórios dos packages <code>seg_app</code> e <code>seg_auth</code>, através do github. </p>
 <p>&emsp;No arquivo <code>pubspec.yaml</code>, instale os packages, indicando o diretório onde os packages foram clonados. Por exemplo: </p>
 <div class="highlight"><pre><span></span><code><span class="nt">dependencies</span><span class="p">:</span>
@@ -332,7 +346,7 @@
     <span class="nt">path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">../../../seg_packages/projeto-seg_auth/seg_auth</span>
 </code></pre></div>
 <p><br/></p>
-<h2 id="arquitetura">Arquitetura</h2>
+<h2 id="2-arquitetura">2. Arquitetura</h2>
 <p>&emsp;Depois de instalar todas as dependencias, o próximo passo é organizar a arquitetura e estrutura de pastas do nosso modulo de autenticação. O modulo de autenticação é organizado seguindo o padrão geralmente utilizadas em outros modulos, baseado no design pattern MVC. A estrutura de pastas deve ficar da seguinte forma: </p>
 <div class="highlight"><pre><span></span><code>├── login/
 │   └── login.controller.dart
@@ -344,6 +358,19 @@
 </code></pre></div>
 <p>&emsp; O modulo é dividido em dois grupos: <code>login</code> e <code>cadastro</code>. Cada grupo segue o design pattern MVC, ou seja, é composto de uma camada view e de outra camada controller. Além desses dois grupos, o modulo contém a pasta referente a camada models, essa pasta irá conter models que são utilizados quando há a necessidade de uma maior personalização, por exemplo o model de um usuário que contém parametros além do model de usuário default. <br/>
    &emsp; Essa é a estrutura minima necessária, mas dependendo do projeto pode ser necessário utilizar dentro do grupo outros tipos de pastas genéricas, como por exemplo pasta widgets, components, etc. </p>
+<p><br/></p>
+<h2 id="3-setar-configuracoes">3. Setar configurações</h2>
+<p>A grosso modo, podemos dizer que o processo de autenticação é igual para qualquer app. Mas existem pequenas variações no processo, por exemplo para qual página é redirecionado após realizar o login, etc. A configuração do processo de autenticação é feito no <code>App Controller</code> através da classe <code>AuthPreferences()</code>. </p>
+<p>Para configurar o processo de autenticação instancie a classe  <code>AuthPreferences()</code> dentro do AppController, conforme demonstrado no exemplo a seguir: </p>
+<div class="highlight"><pre><span></span><code>  <span class="nd">@override</span>
+  <span class="n">AuthPreferences</span> <span class="n">authPreferences</span> <span class="o">=</span> <span class="n">AuthPreferences</span><span class="p">(</span>
+    <span class="nl">privateRoute:</span> <span class="n">AppRoutes</span><span class="p">.</span><span class="n">HOME</span><span class="p">,</span>
+    <span class="nl">afterDisconnectRoute:</span> <span class="n">AppRoutes</span><span class="p">.</span><span class="n">LOGIN</span><span class="p">,</span>
+    <span class="nl">userModel:</span> <span class="n">User</span><span class="p">(),</span> <span class="c1">///[ Esse parametro é utilziado somente quando há necessidade de utilizar um model de usuário personalzado ]</span>
+    <span class="nl">publicRoute:</span> <span class="n">AppRoutes</span><span class="p">.</span><span class="n">LOGIN</span><span class="p">,</span>
+  <span class="p">);</span>
+</code></pre></div>
+<p><br/><br/></p>
                 
               
               
