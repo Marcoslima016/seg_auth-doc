@@ -55,7 +55,7 @@ Para configurar o processo de autenticação instancie a classe  [AuthPreference
   AuthPreferences authPreferences = AuthPreferences(
     privateRoute: AppRoutes.HOME,
     afterDisconnectRoute: AppRoutes.LOGIN,
-    userModel: User(), ///[ Esse parametro é utilziado somente quando há necessidade de utilizar um model de usuário personalzado ]
+    userModel: User(), ///[ Esse parametro é utilizado somente quando há necessidade de utilizar um model de usuário personalizado ]
     publicRoute: AppRoutes.LOGIN,
   );
 ``` 
